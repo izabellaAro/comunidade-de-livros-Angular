@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Home } from '../models/home';
-import { AutoresService } from 'src/app/autores/services/autores.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Autores } from 'src/app/autores/models/autores';
+import { AutoresService } from 'src/app/autores/services/autores.service';
+import { LivrosService } from 'src/app/livros/services/livros.service';
+
+import { Home } from '../models/home';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private autoresService: AutoresService,
+    private livrosSerive: LivrosService,
     private router: Router,
     private route: ActivatedRoute) {}
 
@@ -23,5 +25,9 @@ export class HomeComponent implements OnInit {
 
   onAutores(){
     this.router.navigate(['autores'])
+  }
+
+  onLivros(){
+    this.router.navigate(['livros'])
   }
 }

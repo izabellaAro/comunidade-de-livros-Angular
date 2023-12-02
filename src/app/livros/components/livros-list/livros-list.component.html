@@ -1,0 +1,48 @@
+<mat-table [dataSource]="livros">
+
+  <!-- Titulo Column -->
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef> Titulo do Livro </mat-header-cell>
+    <mat-cell *matCellDef="let livros"> {{ livros.titulo}} </mat-cell>
+  </ng-container>
+
+  <!-- Genero Column -->
+  <ng-container matColumnDef="genero">
+    <mat-header-cell *matHeaderCellDef> Gênero </mat-header-cell>
+    <mat-cell *matCellDef="let livros"> {{ livros.genero.nome}}</mat-cell>
+  </ng-container>
+
+  <!-- Autor Column -->
+  <ng-container matColumnDef="autor">
+    <mat-header-cell *matHeaderCellDef> Autor </mat-header-cell>
+    <mat-cell *matCellDef="let livros"> {{ livros.autor.nome}}</mat-cell>
+  </ng-container>
+
+  <!-- qntPag Column -->
+  <ng-container matColumnDef="qntPag">
+    <mat-header-cell *matHeaderCellDef> Quantidade de Páginas </mat-header-cell>
+    <mat-cell *matCellDef="let livros"> {{ livros.qntPag }}</mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="action-column">
+      <button mat-mini-fab color="primary" aria-label="Adicionar um autor" class="action-column-add">
+        <mat-icon (click)="onAdd()">add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let autor" class="action-column">
+      <button mat-icon-button color="primary" aria-label="Editar livro">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn" aria-label="Remover livro">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
