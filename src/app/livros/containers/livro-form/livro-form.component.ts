@@ -1,9 +1,13 @@
+import { Observable, catchError, of } from 'rxjs';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { LivrosService } from '../../services/livros.service';
+import { Autor, Genero } from '../../models/livros';
+import { GenerosService } from 'src/app/generos/services/generos.service';
+import { AutoresService } from 'src/app/autores/services/autores.service';
 
 @Component({
   selector: 'app-livro-form',
@@ -19,10 +23,28 @@ export class LivroFormComponent implements OnInit {
     qntPag: ['']
   });
 
+  generos: Genero[] = [];
+  autores: Autor[] = [];
+
   constructor(private formBuilder: NonNullableFormBuilder,
     private service: LivrosService,
+    private generoService: GenerosService,
+    private autorService: AutoresService,
     private snackBar: MatSnackBar,
-    private location: Location) {}
+    private location: Location) {
+      this.generoService.list()
+        .subscribe(
+          {
+            next: (data) => this.generos = data,
+            error: (err) => this.onError('Erro ao consultar Gêneros')
+          });
+      this.autorService.list()
+        .subscribe(
+          {
+            next: (data) => this.autores = data,
+            error: (err) => this.onError('Erro ao consultar Autores')
+          });
+  }
 
   ngOnInit(): void {
   }
@@ -41,7 +63,7 @@ export class LivroFormComponent implements OnInit {
     this.onCancel();
   }
 
-  private onError(){
-    this.snackBar.open('Erro ao salvar livro.', '', {duration: 5000});
+  private onError(message: string = 'Erro ao salvar livro.'){
+    this.snackBar.open(message, '', {duration: 5000});
   }
 }

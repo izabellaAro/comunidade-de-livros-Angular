@@ -2,7 +2,9 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { GenerosService } from 'src/app/generos/services/generos.service';
 
+import { Genero } from '../../models/autores';
 import { AutoresService } from '../../services/autores.service';
 
 @Component({
@@ -17,10 +19,20 @@ export class AutorFormComponent implements OnInit {
     generoId: ['']
   });
 
+  generos: Genero[] = [];
+
   constructor(private formBuilder: NonNullableFormBuilder,
     private service: AutoresService,
+    private generosService: GenerosService,
     private snackBar: MatSnackBar,
-    private location: Location) {}
+    private location: Location) {
+      this.generosService.list()
+        .subscribe(
+          {
+            next: (data) => this.generos = data,
+            error: (err) => this.onError('Erro ao consultar Gêneros')
+          });
+    }
 
   ngOnInit(): void {
   }
@@ -39,7 +51,7 @@ export class AutorFormComponent implements OnInit {
     this.onCancel();
   }
 
-  private onError(){
-    this.snackBar.open('Erro ao salvar autor.', '', {duration: 5000});
+  private onError(message: string = 'Erro ao salvar livro.'){
+    this.snackBar.open(message, '', {duration: 5000});
   }
 }

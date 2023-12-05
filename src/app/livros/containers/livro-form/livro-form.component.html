@@ -11,14 +11,19 @@
       <mat-form-field class="full-width">
         <mat-label>Genero</mat-label>
         <mat-select formControlName="generoId">
-          <mat-option value="1">Romance</mat-option>
-          <mat-option value="2">Fantasia</mat-option>
-          <mat-option value="3">Narrativa pessoal</mat-option>
+          <mat-option *ngFor="let genero of generos" [value]="genero.id" >
+            {{genero.nome}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Autor" formControlName="autorId">
+        <mat-label>Autor</mat-label>
+        <mat-select formControlName="autorId">
+          <mat-option *ngFor="let autor of autores" [value]="autor.id" >
+            {{autor.nome}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="full-width">
