@@ -15,7 +15,7 @@ export class AutoresListComponent implements OnInit {
 
   readonly displayedColumns = ['nome', 'genero', 'actions'];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void { }
 

@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 
-import { Genero } from '../models/genero';
-import { GenerosService } from '../services/generos.service';
+import { Genero } from '../../../models/genero';
+import { GenerosService } from '../../../services/generos.service';
 
 @Component({
   selector: 'app-generos',

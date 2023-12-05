@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { Genero } from '../models/genero';
+import { Genero } from '../../models/genero';
 
 @Component({
   selector: 'app-generos-list',

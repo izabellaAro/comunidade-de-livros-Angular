@@ -4,10 +4,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
-import { GenerosFormComponent } from './generos-form/generos-form.component';
-import { GenerosListComponent } from './generos-list/generos-list.component';
+import { GenerosFormComponent } from './containers/generos/generos-form/generos-form.component';
+import { GenerosListComponent } from './components/generos-list/generos-list.component';
 import { GenerosRoutingModule } from './generos-routing.module';
-import { GenerosComponent } from './generos/generos.component';
+import { GenerosComponent } from './containers/generos/generos/generos.component';
 
 
 @NgModule({

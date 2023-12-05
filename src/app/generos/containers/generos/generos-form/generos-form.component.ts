@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { GenerosService } from '../services/generos.service';
+import { GenerosService } from '../../../services/generos.service';
 
 @Component({
   selector: 'app-generos-form',
