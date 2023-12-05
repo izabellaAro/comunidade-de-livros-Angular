@@ -1,3 +1,5 @@
+import { GenerosModule } from './generos/generos.module';
+import { ResenhasModule } from './resenhas/resenhas.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,6 +16,14 @@ const routes: Routes = [
   {
     path: 'livros',
     loadChildren: () => import('./livros/livros.module').then(m => m.LivrosModule)
+  },
+  {
+    path: 'resenhas',
+    loadChildren: () => import('./resenhas/resenhas.module').then(m => m.ResenhasModule)
+  },
+  {
+    path: 'generos',
+    loadChildren: () => import('./generos/generos.module').then(m => m.GenerosModule)
   }
 ];
 
