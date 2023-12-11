@@ -30,4 +30,12 @@ export class HomeComponent implements OnInit {
   onLivros(){
     this.router.navigate(['livros'])
   }
+
+  onResenhas(){
+    this.router.navigate(['resenhas'])
+  }
+
+  onGeneros(){
+    this.router.navigate(['generos'])
+  }
 }
