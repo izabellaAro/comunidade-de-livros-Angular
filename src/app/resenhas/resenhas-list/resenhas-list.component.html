@@ -1,20 +1,21 @@
 <mat-toolbar-row>
   <ng-container matColumnDef="actions">
     <h2>Adicionar nova resenha</h2>
-      <button mat-mini-fab color="primary" aria-label="Adicionar uma resenha" class="action-column-add">
-        <mat-icon (click)="onAdd()">add</mat-icon>
-      </button>
-    </ng-container>
+    <button mat-mini-fab color="primary" aria-label="Adicionar uma resenha" class="action-column-add">
+      <mat-icon (click)="onAdd()">add</mat-icon>
+    </button>
+  </ng-container>
 </mat-toolbar-row>
 
-  <div id="card-alinhamento" *ngFor="let resenha of resenhas">
-    <div class="card-container" >
+<div class="container">
+  <div class="row">
+    <div class="col-6" *ngFor="let resenha of resenhas">
       <div class="cards">
         <div class="container">
-          <mat-card-header>Título do livro: {{ resenha.tituloLivro }}/{{ resenha.nomeAutor }} - {{ resenha.nomeGenero }}</mat-card-header>
-            <mat-card-content>Resenha: {{ resenha.tituloResenha }}
-          {{ resenha.textoResenha }}  </mat-card-content>
+          <mat-card-header><b>Título do livro: </b>  {{ resenha.tituloLivro }}/{{ resenha.nomeAutor }} - {{ resenha.nomeGenero }}</mat-card-header>
+            <mat-card-content><b>Resenha:</b> {{ resenha.tituloResenha }} {{ resenha.textoResenha }}  </mat-card-content>
         </div>
       </div>
     </div>
   </div>
+</div>

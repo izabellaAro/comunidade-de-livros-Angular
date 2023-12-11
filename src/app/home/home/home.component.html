@@ -1,53 +1,47 @@
-<div class="card-container">
-  <div class="cards">
-    <img src="../../../assets/images/autores1.jpg" alt="Avatar" style="width:100%">
-    <div class="container">
+<div class="container-fluid">
+  <div class="row gx-5">
+    <div class="cards col">
+      <img src="../../../assets/images/autores1.jpg" alt="Avatar" style="width:100%">
       <h4><b>Autores</b></h4>
       <p>Consulte e adicione autores por aqui!</p>
+      <div class="botton-selecionar">
+        <mat-card-actions >
+          <button mat-raised-button color="primary" (click)="onAutores()">Consultar!</button>
+        </mat-card-actions>
+      </div>
     </div>
-    <div class="botton-selecionar">
-      <mat-card-actions >
-        <button mat-raised-button color="primary" (click)="onAutores()">Consultar!</button>
-      </mat-card-actions>
-    </div>
-  </div>
 
-  <div class="cards">
-    <img src="../../../assets/images/livros.jpg" alt="Avatar" style="width:100%">
-    <div class="container">
+    <div class="cards col">
+      <img src="../../../assets/images/livros.jpg" alt="Avatar" style="width:100%">
       <h4><b>Livros</b></h4>
       <p>Confira livros por aqui!</p>
+      <div class="botton-selecionar">
+        <mat-card-actions >
+          <button mat-raised-button color="primary" (click)="onLivros()">Consultar!</button>
+        </mat-card-actions>
+      </div>
     </div>
-    <div class="botton-selecionar">
-      <mat-card-actions >
-        <button mat-raised-button color="primary" (click)="onLivros()">Consultar!</button>
-      </mat-card-actions>
-    </div>
-  </div>
 
-  <div class="cards">
-    <img src="../../../assets/images/generos.jpg" alt="Avatar" style="width:100%">
-    <div class="container">
+    <div class="cards col">
+      <img src="../../../assets/images/generos.jpg" alt="Avatar" style="width:100%">
       <h4><b>Gêneros</b></h4>
       <p>Consulte os gêneros disponiveis e adicione por aqui!</p>
+      <div class="botton-selecionar">
+        <mat-card-actions >
+          <button mat-raised-button color="primary" (click)="onGeneros()">Consultar!</button>
+        </mat-card-actions>
+      </div>
     </div>
-    <div class="botton-selecionar">
-      <mat-card-actions >
-        <button mat-raised-button color="primary" (click)="onGeneros()">Consultar!</button>
-      </mat-card-actions>
-    </div>
-  </div>
 
-  <div class="cards">
-    <img src="../../../assets/images/resenhas.jpg" alt="Avatar" style="width:100%">
-    <div class="container">
+    <div class="cards col">
+      <img src="../../../assets/images/resenhas.jpg" alt="Avatar" style="width:100%">
       <h4><b>Resenhas</b></h4>
       <p>Consulte e adicione resenhas por aqui!</p>
-    </div>
-    <div class="botton-selecionar">
-      <mat-card-actions >
-        <button mat-raised-button color="primary" (click)="onResenhas()">Consultar!</button>
-      </mat-card-actions>
+      <div class="botton-selecionar">
+        <mat-card-actions >
+          <button mat-raised-button color="primary" (click)="onResenhas()">Consultar!</button>
+        </mat-card-actions>
+      </div>
     </div>
   </div>
 </div>

@@ -6,30 +6,5 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 10px;
-  margin: 10px;
-  width: 16%;
   padding: 20px;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: inline-block;
-}
-
-#card-alinhamento{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, auto));
-  align-items: center;
-  gap: 2rem;
-  padding-top: 10px;
 }
