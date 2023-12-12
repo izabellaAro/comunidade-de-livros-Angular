@@ -9,9 +9,7 @@
   <!-- GeneroAutor Column -->
   <ng-container matColumnDef="genero">
     <mat-header-cell *matHeaderCellDef> Gênero </mat-header-cell>
-    <mat-cell *matCellDef="let autor"> {{ autor.genero.nome}}
-    <mat-icon aria-hidden="false" aria-label="Genero do autor">{{ autor.genero.nome |autoresGenero }}</mat-icon>
-    </mat-cell>
+    <mat-cell *matCellDef="let autor"> {{ autor.genero.nome}}</mat-cell>
   </ng-container>
 
   <!-- Actions Column -->
