@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Resenha } from '../models/resenha';
-import { ResenhasService } from '../services/resenhas.service';
+import { Resenha } from '../../models/resenha';
+import { ResenhasService } from '../../services/resenhas.service';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';

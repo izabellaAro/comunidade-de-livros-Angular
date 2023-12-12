@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
-import { ResenhaFormComponent } from './resenha-form/resenha-form.component';
-import { ResenhasListComponent } from './resenhas-list/resenhas-list.component';
+import { ResenhaFormComponent } from './containers/resenhas/resenha-form/resenha-form.component';
+import { ResenhasListComponent } from './components/resenhas-list/resenhas-list.component';
 import { ResenhasRoutingModule } from './resenhas-routing.module';
-import { ResenhasComponent } from './resenhas/resenhas.component';
+import { ResenhasComponent } from './containers/resenhas/resenhas.component';
 
 @NgModule({
   declarations: [

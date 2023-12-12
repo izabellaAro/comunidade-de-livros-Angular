@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
 
 import { Resenha } from '../models/resenha';
+import { ResenhaPost } from '../models/resenha-post';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,8 @@ export class ResenhasService {
     );
   }
 
-  save(record: Partial<Resenha>){
-    return this.HttpClient.post<Resenha>(`${this.API}` , record).pipe(first());
+  save(record: Partial<ResenhaPost>){
+    return this.HttpClient.post<ResenhaPost>(`${this.API}` , record).pipe(first());
   }
 }
 

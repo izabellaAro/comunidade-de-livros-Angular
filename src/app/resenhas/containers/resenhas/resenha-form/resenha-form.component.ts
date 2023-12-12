@@ -2,11 +2,10 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AutoresService } from 'src/app/autores/services/autores.service';
-import { GenerosService } from 'src/app/generos/services/generos.service';
+import { Livros } from 'src/app/livros/models/livros';
+import { LivrosService } from 'src/app/livros/services/livros.service';
 
-import { Autor, Genero } from '../models/resenha';
-import { ResenhasService } from '../services/resenhas.service';
+import { ResenhasService } from '../../../services/resenhas.service';
 
 @Component({
   selector: 'app-resenha-form',
@@ -16,34 +15,26 @@ import { ResenhasService } from '../services/resenhas.service';
 export class ResenhaFormComponent implements OnInit {
 
   form = this.formBuilder.group({
-    tituloLivro: [''],
-    nomeAutorId: [''],
-    nomeGeneroId: [''],
+    livroId: [0],
     tituloResenha: [''],
     textoResenha:['']
   });
 
-  generos: Genero[] = [];
-  autores: Autor[] = [];
+  livros: Livros[] = [];
 
   constructor(private formBuilder: NonNullableFormBuilder,
     private service: ResenhasService,
     private snackBar: MatSnackBar,
     private location: Location,
-    private generoService: GenerosService,
-    private autorService: AutoresService) {
-      this.generoService.list()
+    private livroService: LivrosService,
+    ) {
+      this.livroService.list()
         .subscribe(
           {
-            next: (data) => this.generos = data,
-            error: (err) => this.onError('Erro ao consultar Gêneros')
+            next: (data) => this.livros = data,
+            error: (err) => this.onError('Erro ao consultar Livros')
           });
-      this.autorService.list()
-        .subscribe(
-          {
-            next: (data) => this.autores = data,
-            error: (err) => this.onError('Erro ao consultar Autores')
-          });
+      console.log(this.livros);
     }
 
   ngOnInit(): void {

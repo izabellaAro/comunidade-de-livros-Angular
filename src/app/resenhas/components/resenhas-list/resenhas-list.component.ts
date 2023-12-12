@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Resenha } from '../models/resenha';
+import { Resenha } from '../../models/resenha';
 
 @Component({
   selector: 'app-resenhas-list',

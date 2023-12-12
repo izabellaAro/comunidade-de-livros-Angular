@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ResenhaFormComponent } from './resenha-form/resenha-form.component';
-import { ResenhasComponent } from './resenhas/resenhas.component';
+import { ResenhaFormComponent } from './containers/resenhas/resenha-form/resenha-form.component';
+import { ResenhasComponent } from './containers/resenhas/resenhas.component';
 
 const routes: Routes = [
   {path: '', component: ResenhasComponent},

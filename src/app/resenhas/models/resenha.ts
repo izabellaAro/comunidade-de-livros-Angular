@@ -7,10 +7,6 @@ export interface Resenha {
   tituloResenha: string;
 }
 
-// export interface tituloLivro{
-//   tituloLivro: string;
-// }
-
 export interface Genero{
   id: Number;
   nome: String;
